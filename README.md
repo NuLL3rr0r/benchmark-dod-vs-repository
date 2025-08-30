@@ -18,6 +18,11 @@ This project provides minimal examples of both styles and measures their perform
 
 - __`bench-dod-znver2`__: Hand-tuned AVX2/FMA path optimized for __AMD Zen 2 (e.g. Threadripper 3960X)__. Uses dual accumulators for ILP and light prefetching, sustaining higher throughput on Zen 2’s dual FMA units.
 
+Each benchmark also has a `-double` variant that uses __double precision accumulation__.
+
+- Float versions are benchmarked at `10` million records.
+- Double versions scale up to `1` billion records without overflow and less potential drift in the SIMD variants.
+
 ## Clone & Build
 
 ```bash
